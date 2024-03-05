@@ -1,17 +1,21 @@
 .baseForm {
-    border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .list {
-    border: 1px solid red;
+    border: 1px solid #DB6A6A;
     /*width: ;*/
     height: 100px;
     display: flex;
 }
 
 .regionItem {
-    border-right: 1px solid blue;
+    border-right: 1px solid #DB6A6A;
     width: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .photoItem {
@@ -21,29 +25,42 @@
 .postItem {
     display: flex;
     flex-direction: column;
-    border: 1px solid blue;
+    /*border: 1px solid blue;*/
     width: 1000px;
     /*justify-content: space-between;*/
     /*justify-content: center;*/
 }
 
-.titleItem {
-    border: 1px solid green;
+.titleItems {
+    border: 1px solid #DB6A6A;
+    padding-left: 10px;
+    padding-right: 10px;
     height: 30px;
     display: flex;
     justify-content: space-between;
     cursor: pointer;
 }
 
+.titleItem {
+    font-size: 18px;
+    font-weight: bold;
+}
+
 .countItem{
+
 }
 
 .contentItem {
-    border: 1px solid yellow;
+    border: 1px solid #DB6A6A;
+    padding: 10px;
     height: 70px;
+    color: #3B404B;
 }
 
 .viewItem {
-    border: 1px solid #61dafb;
+    /*border: 1px solid #61dafb;*/
     width: 110px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
 }

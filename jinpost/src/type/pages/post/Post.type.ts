@@ -17,7 +17,16 @@ export type PostInfoResponseType = {
     postExpYn: string,
     region1: string,
     region2: string,
-    region3: string
+    region3: string,
+    postPinYn: string,
+    postLikeYn: string
+}
+
+/**
+ * 게시글 삭제 요청 파라미터
+ */
+export type PostRemoveRequestType = {
+    postId: number
 }
 
 /**
@@ -25,5 +34,14 @@ export type PostInfoResponseType = {
  */
 export type PostLikeRequestType = {
     postId: number | undefined,
-    postLikeYn: string
+    memberId: number | undefined
+    // postLikeYn: string
+}
+
+/**
+ * 게시글 핀 고정 요청 파라미터
+ */
+export type PostPinRequestType = {
+    postId: number,
+    postPinYn: string | undefined
 }

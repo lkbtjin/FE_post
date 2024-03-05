@@ -1,25 +1,29 @@
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import React, {Fragment, useEffect, useState} from "react";
 import PostInfo from "../../components/post/PostInfo";
 import axios from "axios";
-import {PostInfoResponseType, PostLikeRequestType} from "../../type/pages/post/Post.type";
+import {PostInfoResponseType, PostLikeRequestType, PostRemoveRequestType} from "../../type/pages/post/Post.type";
 import styles from './PostInfoPage.module.css'
 
+/**
+ * 게시물 상세 페이지
+ * @param props
+ * @constructor
+ */
 const PostInfoPage = (props: any): JSX.Element => {
+    /** 페이지 이동을 위해 navigate 사용 */
+    const navigate = useNavigate();
+    /** 포스트아이디 */
     const {postId} = useParams();
-    console.log('Post Info Page')
-    console.log(postId)
-
+    /** 게시물 상세를 받아와서 셋팅 **/
     const [post, setPost] = useState<PostInfoResponseType>();
 
     /**
      *  상세조회
      */
     const postInfoApi = () => {
-        console.log('postInfo API')
         axios.get(`http://localhost:8080/post/info/${postId}`)
             .then((result) => {
-                console.log(result)
                 setPost(result.data)
             })
             .catch((err) => {
@@ -31,13 +35,34 @@ const PostInfoPage = (props: any): JSX.Element => {
     }
 
     /**
+     * 게시글 삭제
+     */
+    const postRemoveApi = () => {
+        let postRemoveParam: PostRemoveRequestType = {
+            postId: Number(postId)
+        }
+        axios.post('http://localhost:8080/post/remove', postRemoveParam)
+            .then((result) => {
+                console.log(result)
+                navigate('/')
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+            .finally(()=>{
+
+            })
+    }
+
+    /**
      * 게시글 좋아요/좋아요 취소
      */
     const postLikeApi = () => {
         console.log('postLike API')
         let postLikeParam: PostLikeRequestType = {
             postId: Number(postId),
-            postLikeYn: 'Y'
+            memberId: 111111
+            // postLikeYn: post.postLikeYn
         }
         axios.post('http://localhost:8080/post/like', postLikeParam)
             .then((result) => {
@@ -56,7 +81,7 @@ const PostInfoPage = (props: any): JSX.Element => {
 
     return (
         <div className={styles.main}>
-            <PostInfo postLikeApi={postLikeApi} post={post}/>
+            <PostInfo postLikeApi={postLikeApi} postRemoveApi={postRemoveApi} post={post}/>
         </div>
     )
 }
