@@ -13,7 +13,7 @@ const PostInfo = (props: any): JSX.Element => {
                         <div className={styles.postTitle}>{props.post.postTitle}</div>
                         <div className={styles.info}>
                             <div className={styles.leftInfo}>
-                                <div>조회수</div>
+                                <div>조회수 {props.post.postLikeCount}</div>
                                 <div>좋아요</div>
                                 <div>싫어요</div>
                             </div>

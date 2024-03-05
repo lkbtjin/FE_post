@@ -19,7 +19,8 @@ export type PostInfoResponseType = {
     region2: string,
     region3: string,
     postPinYn: string,
-    postLikeYn: string
+    postLikeYn: string,
+    likeCount: number
 }
 
 /**
@@ -35,7 +36,6 @@ export type PostRemoveRequestType = {
 export type PostLikeRequestType = {
     postId: number | undefined,
     memberId: number | undefined
-    // postLikeYn: string
 }
 
 /**

@@ -59,9 +59,10 @@ const PostInfoPage = (props: any): JSX.Element => {
      */
     const postLikeApi = () => {
         console.log('postLike API')
+        console.log(post);
         let postLikeParam: PostLikeRequestType = {
             postId: Number(postId),
-            memberId: 111111
+            memberId: 111112
             // postLikeYn: post.postLikeYn
         }
         axios.post('http://localhost:8080/post/like', postLikeParam)

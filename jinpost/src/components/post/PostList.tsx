@@ -33,9 +33,9 @@ const PostList = (props: any): JSX.Element => {
                                         {post.postTitle}
                                     </div>
                                     <div className={styles.countItem}>
-                                        <span>조회수 223</span>&nbsp;
-                                        <span>좋아요 223</span>&nbsp;
-                                        <span>싫어요 42</span>
+                                        <span>조회수 </span>&nbsp;
+                                        <span>좋아요 {post.likeCount}</span>&nbsp;
+                                        <span>싫어요 </span>
                                     </div>
                                 </div>
                                 <div className={styles.contentItem}>{post.postContent}</div>
