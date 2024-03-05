@@ -1,0 +1,28 @@
+.replyWriteForm {
+    border: 1px solid black;
+}
+
+.replyWriteTop {
+    border: 1px solid red;
+}
+
+.replyInputForm {
+    border: 1px solid blue;
+}
+
+.replyInputForm {
+    width: 1275px;
+    display: flex;
+}
+
+.replyWriterForm input {
+    width: 200px;
+}
+
+.replyPasswordForm input {
+    width: 200px;
+}
+
+.replyInputForm textarea {
+    width: 1268px;
+}

@@ -1,6 +1,7 @@
 import MainLayout from "../../pages/main/MainLayout";
 import Main from "../../pages/main/Main";
-import PostWrite from "../../pages/post/PostWrite";
+import PostWrite from "../../pages/post/PostWritePage";
+import PostInfoPage from "../../pages/post/PostInfoPage";
 
 const reactRoute = [
     {
@@ -15,6 +16,10 @@ const reactRoute = [
             {
                 path: 'add',
                 element: <PostWrite/>
+            },
+            {
+                path:`/post/info/:postId`,
+                element: <PostInfoPage/>
             }
         ]
     }

@@ -3,6 +3,7 @@ import {PostListResponseType} from "../../type/pages/post/Post.type";
 import PostList from "../../components/post/PostList";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
+import styles from './Main.module.css'
 
 const Main = (): JSX.Element => {
 
@@ -42,9 +43,7 @@ const Main = (): JSX.Element => {
     }, []);
 
     return (
-        <div>
-            <h3>Main</h3>
-            <button onClick={()=>navigate('/add')}></button>
+        <div className={styles.main}>
             <PostList posts={posts}/>
         </div>
     )

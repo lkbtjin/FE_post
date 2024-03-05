@@ -1,40 +1,41 @@
 import React from "react";
 import styles from "./PostList.module.css"
-import {
-    DataGrid,
-    DataGridBody,
-    DataGridCell,
-    DataGridHeader,
-    DataGridRow,
-    Divider,
-    makeStyles
-} from "@fluentui/react-components"
+import {useNavigate} from "react-router-dom";
+import {PostInfoResponseType} from "../../type/pages/post/Post.type";
 
-const useStyles = makeStyles({
-    root: {
-        display: 'flex'
-    }
-})
 
 const PostList = (props: any): JSX.Element => {
-    const test = [
-        {id: 'dd', pw: 'dddg'},
-        {id: 'ggg'}
-    ]
-    console.log(props)
+    const navigate = useNavigate();
     return (
         <div className={styles.baseForm}>
-            <h2>Post List</h2>
-            {props.posts ? props.posts.map((post: any) => {
+            {props.posts ? props.posts.map((post: PostInfoResponseType) => {
                 return (
                     <div key={post.postId}>
                         <div className={styles.list}>
-                            <div className={styles.regionItem}>{post.region1}</div>
+                            <div className={styles.regionItem}>
+                                <div>{post.region1}</div>
+                                <div>{post.region2}</div>
+                                <div>{post.region3}</div>
+                            </div>
+                            <div className={styles.photoItem}>
+                                사진
+                            </div>
                             <div className={styles.postItem}>
-                                <div className={styles.titleItem}>{post.postTitle}</div>
+                                <div className={styles.titleItem} onClick={() => navigate(`/post/info/${post.postId}`)}>
+                                    <div>
+                                        {post.postTitle}
+                                    </div>
+                                    <div>
+                                        <span>조회수 223</span>&nbsp;
+                                        <span>좋아요 223</span>&nbsp;
+                                        <span>싫어요 42</span>
+                                    </div>
+                                </div>
                                 <div className={styles.contentItem}>{post.postContent}</div>
                             </div>
-                            <div className={styles.viewItem}>{post.postLikeCount}</div>
+                            <div className={styles.viewItem}>
+                                <button>핀 고정</button>
+                            </div>
                         </div>
                     </div>
                 )

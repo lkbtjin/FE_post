@@ -14,17 +14,28 @@
     width: 70px;
 }
 
+.photoItem {
+    width: 100px;
+}
+
 .postItem {
     display: flex;
     flex-direction: column;
     border: 1px solid blue;
     width: 1000px;
+    /*justify-content: space-between;*/
     /*justify-content: center;*/
 }
 
 .titleItem {
     border: 1px solid green;
     height: 30px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.countItem{
 }
 
 .contentItem {
@@ -34,5 +45,5 @@
 
 .viewItem {
     border: 1px solid #61dafb;
-    width: 130px;
+    width: 110px;
 }

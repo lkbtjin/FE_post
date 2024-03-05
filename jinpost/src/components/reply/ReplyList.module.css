@@ -1,0 +1,24 @@
+.replyForm {
+    border: 1px solid black;
+    height:170px;
+}
+
+.replyTop {
+    border: 1px solid red;
+    height: 50px;
+}
+
+.replyBasicInfo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.replyButton {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.replyBottom {
+    border: 1px solid blue;
+    height: 90px;
+}

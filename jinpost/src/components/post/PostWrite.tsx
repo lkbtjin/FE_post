@@ -1,4 +1,4 @@
-const postWrite = () => {
+const PostWrite = () => {
     return (
         <div>
             <h2>Post Write</h2>
@@ -6,4 +6,4 @@ const postWrite = () => {
     )
 }
 
-export default postWrite;
+export default PostWrite;
