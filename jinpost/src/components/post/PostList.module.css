@@ -16,6 +16,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: #DB6A6A;
+    font-weight: bold;
 }
 
 .photoItem {
@@ -29,10 +31,11 @@
     width: 1000px;
     /*justify-content: space-between;*/
     /*justify-content: center;*/
+    padding: 10px;
 }
 
 .titleItems {
-    border: 1px solid #DB6A6A;
+    /*border: 1px solid #DB6A6A;*/
     padding-left: 10px;
     padding-right: 10px;
     height: 30px;
@@ -42,8 +45,9 @@
 }
 
 .titleItem {
-    font-size: 18px;
+    font-size: 22px;
     font-weight: bold;
+    /*padding: 5px;*/
 }
 
 .countItem{

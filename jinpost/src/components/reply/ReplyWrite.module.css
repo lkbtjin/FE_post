@@ -1,13 +1,16 @@
 .replyWriteForm {
-    border: 1px solid black;
+    /*border-bottom: 1px solid #DB6A6A;*/
+    margin-bottom: 20px;
 }
 
 .replyWriteTop {
-    border: 1px solid red;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .replyInputForm {
-    border: 1px solid blue;
 }
 
 .replyInputForm {
@@ -17,12 +20,15 @@
 
 .replyWriterForm input {
     width: 200px;
+    border: 1px solid #DB6A6A;
 }
 
 .replyPasswordForm input {
     width: 200px;
+    border: 1px solid #DB6A6A;
 }
 
-.replyInputForm textarea {
+.replyTextAreaForm textarea {
     width: 1268px;
+    border: 1px solid #DB6A6A;
 }

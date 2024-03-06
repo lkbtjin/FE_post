@@ -1,24 +1,30 @@
 .replyForm {
-    border: 1px solid black;
     height:170px;
+    border-bottom: 1px solid #DB6A6A;
+    margin-bottom: 15px;
 }
 
 .replyTop {
-    border: 1px solid red;
     height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .replyBasicInfo {
-    display: flex;
-    justify-content: space-between;
+    padding-left: 10px;
+    /*display: flex;*/
+    /*justify-content: space-between;*/
 }
 
 .replyButton {
     display: flex;
     justify-content: flex-end;
+    padding-right: 10px;
 }
 
 .replyBottom {
-    border: 1px solid blue;
+    /*border-bottom: 1px solid #DB6A6A;*/
     height: 90px;
+    padding-left: 15px;
 }

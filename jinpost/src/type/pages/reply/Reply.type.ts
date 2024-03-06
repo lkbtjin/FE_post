@@ -8,3 +8,13 @@ export type ReplyInfoResponseType = {
     replyWriter: string,
     regDateTime: string
 }
+
+/**
+ * 댓글 작성 요청 파라미터
+ */
+export type ReplyAddRequestType = {
+    postId: number
+    replyWriter: string
+    replyPassword: string
+    replyContent: string
+}

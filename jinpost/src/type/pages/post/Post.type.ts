@@ -20,7 +20,9 @@ export type PostInfoResponseType = {
     region3: string,
     postPinYn: string,
     postLikeYn: string,
-    likeCount: number
+    likeCount: number,
+    viewCount: number,
+    hateCount: number
 }
 
 /**
@@ -44,4 +46,19 @@ export type PostLikeRequestType = {
 export type PostPinRequestType = {
     postId: number,
     postPinYn: string | undefined
+}
+
+/**
+ * 게시글 조회수 카운트 요청 파라미터
+ */
+export type ViewRequestType = {
+    postId: number | undefined
+}
+
+/**
+ * 게시글 작성 요청 파라미터
+ */
+export type PostAddRequestType = {
+    postTitle: string,
+    postContent: string
 }

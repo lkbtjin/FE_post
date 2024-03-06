@@ -3,12 +3,10 @@ import styles from './Header.module.css'
 
 const Header = () => {
     const navigate = useNavigate();
-    console.log(navigate)
     const location = useLocation();
-    console.log(location)
     return (
         <div>
-            <nav>
+            <nav className={styles.nav}>
                 <div>
                     <h2 onClick={() => navigate('/')}>Header</h2>
                 </div>

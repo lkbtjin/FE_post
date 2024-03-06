@@ -1,0 +1,41 @@
+.baseForm {
+    width: 1200px;
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    /*flex-direction: column;*/
+}
+.postWriteTitle {
+    width: 1200px;
+}
+
+.postWriteTitle input {
+    width: 1192px;
+    height: 40px;
+}
+
+.postWriteSelect {
+    margin: 60px 10px 10px 10px;
+    display: flex;
+}
+
+.selectRegion1 {
+    margin-right: 15px;
+}
+
+.selectRegion1 label {
+    margin-right: 10px;
+}
+
+.selectRegion1 select {
+    font-size: 20px;
+    width: 100px;
+    height: 30px;
+}
+
+.postWriteButton {
+    margin: 30px 10px 10px 10px;
+    display: flex;
+    justify-content: end;
+}
+

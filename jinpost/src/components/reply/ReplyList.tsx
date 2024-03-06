@@ -2,8 +2,7 @@ import {ReplyInfoResponseType} from "../../type/pages/reply/Reply.type";
 import styles from './ReplyList.module.css'
 
 const ReplyList = (props: any) => {
-    console.log('Reply List')
-    console.log(props)
+    console.log(props.replies)
     return (
         <div>
             {props.replies ? props.replies.map((reply: ReplyInfoResponseType) => {

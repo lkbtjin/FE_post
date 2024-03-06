@@ -33,12 +33,13 @@ const PostList = (props: any): JSX.Element => {
                                         {post.postTitle}
                                     </div>
                                     <div className={styles.countItem}>
-                                        <span>조회수 </span>&nbsp;
+                                        <span>조회수 {post.viewCount}</span>&nbsp;
                                         <span>좋아요 {post.likeCount}</span>&nbsp;
-                                        <span>싫어요 </span>
+                                        <span>싫어요 {post.hateCount}</span>
                                     </div>
                                 </div>
-                                <div className={styles.contentItem}>{post.postContent}</div>
+                                <div>김현진 2023-04-02</div>
+                                {/*<div className={styles.contentItem}>{post.postContent}</div>*/}
                             </div>
                             <div className={styles.viewItem}>
                                 <button onClick={() => props.postPinApi(post)}>핀 고정</button>
