@@ -1,7 +1,7 @@
-import React from "react";
+import React, {useState} from "react";
 import styles from "./PostList.module.css"
 import {useNavigate} from "react-router-dom";
-import {PostInfoResponseType} from "../../type/pages/post/Post.type";
+import {PostInfoResponseType, PostSearchRequestType} from "../../type/pages/post/Post.type";
 
 /**
  * 게시판 조회 결과를 뿌려주는 화면
@@ -13,8 +13,46 @@ const PostList = (props: any): JSX.Element => {
     /** 페이지 이동을 위해 navigate 사용 **/
     const navigate = useNavigate();
 
+    const [startDate, setStartDate] = useState<string>(new Date().toISOString().split('T')[0]);
+    const [endDate, setEndDate] = useState<string>();
+    // const [searchParam, setSearchParam] = useState<PostSearchRequestType>({
+    //     startDate: '',
+    //     endDate: '',
+    //     postTitle: '',
+    //     postWriter: ''
+    // });
+
+    const [keyword, setKeyword] = useState<string>();
+
+    const date = new Date();
+    // const today = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+    const today = new Date().toISOString().split('T')[0];
+
     return (
         <div className={styles.baseForm}>
+            <div>
+                <div>
+                    <div>
+                        <span>
+                            <input onChange={(e)=> setStartDate(e.target.value)}type='date' value={today}/>
+                        </span>
+                        <span>~</span>
+                        <span>
+                            <input type='date'/>
+                        </span>
+                    </div>
+                    <div>
+                        <select>
+                            <option>선택</option>
+                            <option>제목</option>
+                        </select>
+                        <input type="text" onChange={(e)=> setKeyword(e.target.value)}/>
+                    </div>
+                    <div>
+                        <button onClick={(e)=>props.postSearchApi(startDate, keyword)}>검색</button>
+                    </div>
+                </div>
+            </div>
             {props.posts ? props.posts.map((post: PostInfoResponseType) => {
                 return (
                     <div key={post.postId}>
@@ -28,7 +66,8 @@ const PostList = (props: any): JSX.Element => {
                                 사진
                             </div>
                             <div className={styles.postItem}>
-                                <div className={styles.titleItems} onClick={() => navigate(`/post/info/${post.postId}`)}>
+                                <div className={styles.titleItems}
+                                     onClick={() => navigate(`/post/info/${post.postId}`)}>
                                     <div className={styles.titleItem}>
                                         {post.postTitle}
                                     </div>

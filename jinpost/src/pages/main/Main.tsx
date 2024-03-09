@@ -1,5 +1,10 @@
 import {useEffect, useState} from "react";
-import {PostInfoResponseType, PostListResponseType, PostPinRequestType} from "../../type/pages/post/Post.type";
+import {
+    PostInfoResponseType,
+    PostListResponseType,
+    PostPinRequestType,
+    PostSearchRequestType
+} from "../../type/pages/post/Post.type";
 import PostList from "../../components/post/PostList";
 import axios from "axios";
 import styles from './Main.module.css'
@@ -33,6 +38,32 @@ const Main = (): JSX.Element => {
     }
 
     /**
+     * 게시글 검색
+     * - 키워드 검색: 제목, 작성자 / 날짜 검색
+     */
+    const postSearchApi = (startDate: string, keyword: string) => {
+        console.log(startDate)
+        console.log(keyword)
+        let searchParam: PostSearchRequestType = {
+            startDate: '',
+            endDate: '',
+            postTitle: '',
+            postWriter: '',
+            keyword: keyword
+        }
+        console.log(searchParam)
+        axios.get('http://localhost:8080/post/search', {params: searchParam})
+            .then((result) => {
+                setPosts(result.data)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+            .finally(() => {
+            })
+    }
+
+    /**
      * 게시글 핀 고정
      * TODO (구현필요) 2024-03-05 전체적으로 재 구현 필요
      */
@@ -62,7 +93,7 @@ const Main = (): JSX.Element => {
 
     return (
         <div className={styles.main}>
-            <PostList postPinApi={postPinApi} posts={posts}/>
+            <PostList postPinApi={postPinApi} posts={posts} postSearchApi={postSearchApi}/>
         </div>
     )
 };

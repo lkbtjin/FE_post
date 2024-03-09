@@ -62,3 +62,14 @@ export type PostAddRequestType = {
     postTitle: string,
     postContent: string
 }
+
+/**
+ * 게시글 검색 요청 파라미터
+ */
+export type PostSearchRequestType = {
+    startDate: string,
+    endDate: string,
+    postTitle: string,
+    postWriter: string,
+    keyword: string
+}
