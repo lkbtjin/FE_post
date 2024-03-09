@@ -3,9 +3,15 @@ import {Fragment} from "react";
 import ReplyWrite from "../reply/ReplyWrite";
 import ReplyList from "../reply/ReplyList";
 import ReplyPage from "../../pages/reply/ReplyPage";
+import {useNavigate} from "react-router-dom";
 
+/**
+ *  게시글 상세 컴포넌트
+ * @param props
+ * @constructor
+ */
 const PostInfo = (props: any): JSX.Element => {
-    console.log(props)
+    const navigate = useNavigate();
     return (
         <Fragment>
             {props.post ?
@@ -57,7 +63,7 @@ const PostInfo = (props: any): JSX.Element => {
                                        postInfoApi={props.postInfoApi}/>
                         </div>
                         <div>
-                            <button>수정</button>
+                            <button onClick={() => navigate(`/post/modify/${props.post.postId}`)}>수정</button>
                             <button onClick={props.postRemoveApi}>삭제</button>
                         </div>
                     </div>
