@@ -1,11 +1,20 @@
 .baseForm {
+    margin: 10px;
     width: 1200px;
     /*display: flex;*/
     /*justify-content: center;*/
     /*align-items: center;*/
     /*flex-direction: column;*/
 }
+
+.baseTitle {
+    border-bottom: 1px solid #DB6A6A;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .postWriteTitle {
+    margin-top: 10px;
     width: 1200px;
 }
 

@@ -51,13 +51,14 @@ const PostInfo = (props: any): JSX.Element => {
                              }}
                         />
                         {/*<div className={styles.contentInfo}>{props.post.postContent}</div>*/}
-                        <div>
-                            <button>수정</button>
-                            <button onClick={props.postRemoveApi}>삭제</button>
-                        </div>
+
                         <div className={styles.replyInfo}>
                             <ReplyPage replies={props.post.replies} postId={props.post.postId}
                                        postInfoApi={props.postInfoApi}/>
+                        </div>
+                        <div>
+                            <button>수정</button>
+                            <button onClick={props.postRemoveApi}>삭제</button>
                         </div>
                     </div>
                 </div>

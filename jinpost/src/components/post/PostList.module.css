@@ -2,15 +2,19 @@
     /*border: 1px solid black;*/
 }
 
+.baseTitle {
+    border-bottom: 1px solid #DB6A6A;
+}
+
 .list {
-    border: 1px solid #DB6A6A;
+    /*border: 1px solid #DB6A6A;*/
     /*width: ;*/
     height: 100px;
     display: flex;
 }
 
 .regionItem {
-    border-right: 1px solid #DB6A6A;
+    /*border-right: 1px solid #DB6A6A;*/
     width: 70px;
     display: flex;
     flex-direction: column;
@@ -55,7 +59,7 @@
 }
 
 .contentItem {
-    border: 1px solid #DB6A6A;
+    /*border: 1px solid #DB6A6A;*/
     padding: 10px;
     height: 70px;
     color: #3B404B;

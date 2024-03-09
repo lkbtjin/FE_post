@@ -21,6 +21,14 @@ const PostWrite = (props: any) => {
 
     return (
         <div className={styles.baseForm}>
+            <div className={styles.baseTitle}>
+                <div>
+                    <h2>맛집 작성</h2>
+                </div>
+                <div className={styles.postWriteButton}>
+                    <button onClick={() => props.addPostApi(content, title)}>글 등록</button>
+                </div>
+            </div>
             <div className={styles.postWriteTitle}>
                 <input type='text' placeholder='제목을 입력해주세요.' onChange={(e) => setTitle(e.target.value)}/>
             </div>
@@ -60,10 +68,15 @@ const PostWrite = (props: any) => {
                     </select>
                 </div>
             </div>
-            <div className={styles.postWriteButton}>
-                <button onClick={() => props.addPostApi(content, title)}>글 등록</button>
-                <button>취소</button>
+            <div>
+                <div>
+                    <label>업종정보</label>
+                    <select>
+                        <option>선</option>
+                    </select>
+                </div>
             </div>
+
         </div>
     )
 }

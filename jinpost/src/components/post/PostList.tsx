@@ -30,7 +30,7 @@ const PostList = (props: any): JSX.Element => {
 
     return (
         <div className={styles.baseForm}>
-            <div>
+            <div className={styles.baseTitle}>
                 <div>
                     <div>
                         <span>
