@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import {
-    PostInfoResponseType,
+    PostInfoResponseType, PostListRequestType,
     PostListResponseType,
     PostPinRequestType,
     PostSearchRequestType
@@ -24,8 +24,12 @@ const Main = (): JSX.Element => {
     /**
      * 게시글 전체 조회
      */
-    const postListApi = () => {
-        axios.get('http://localhost:8080/post/list')
+    const postListApi = (startDate: string, keyword: string) => {
+        console.log(keyword)
+        let listParam: PostListRequestType = {
+            postTitle: keyword
+        }
+        axios.get('http://localhost:8080/post/list', {params: listParam})
             .then((result) => {
                 setPosts(result.data)
             })
@@ -88,12 +92,12 @@ const Main = (): JSX.Element => {
      * 최초 페이지 접속시 게시글 조회를 실행
      */
     useEffect(() => {
-        postListApi();
+        postListApi('', '');
     }, []);
 
     return (
         <div className={styles.main}>
-            <PostList postPinApi={postPinApi} posts={posts} postSearchApi={postSearchApi}/>
+            <PostList postPinApi={postPinApi} posts={posts} postSearchApi={postSearchApi} postListApi={postListApi}/>
         </div>
     )
 };

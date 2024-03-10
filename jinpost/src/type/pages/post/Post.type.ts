@@ -26,6 +26,13 @@ export type PostInfoResponseType = {
 }
 
 /**
+ * 게시글 리스트 요청 파라미터(검색)
+ */
+export type PostListRequestType = {
+    postTitle: string | ''
+}
+
+/**
  * 게시글 삭제 요청 파라미터
  */
 export type PostRemoveRequestType = {

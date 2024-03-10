@@ -11,18 +11,22 @@ const reactRoute = [
         element: <MainLayout/>,
         children: [
             {
+                id: 'main',
                 path:"",
                 element: <Main/>
             },
             {
+                id: 'postWrite',
                 path: 'add',
                 element: <PostWritePage/>
             },
             {
+                id: 'postInfo',
                 path:`/post/info/:postId`,
                 element: <PostInfoPage/>
             },
             {
+                id: 'postModify',
                 path: '/post/modify/:postId',
                 element: <PostWritePage/>
             }

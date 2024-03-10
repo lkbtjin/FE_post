@@ -27,6 +27,7 @@ const PostWrite = (props: any) => {
                 </div>
                 <div className={styles.postWriteButton}>
                     <button onClick={() => props.addPostApi(content, title)}>글 등록</button>
+                    <button onClick={() => props.postModifyApi(content, title)}>글 수정</button>
                 </div>
             </div>
             <div className={styles.postWriteTitle}>

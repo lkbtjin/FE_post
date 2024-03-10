@@ -49,7 +49,8 @@ const PostList = (props: any): JSX.Element => {
                         <input type="text" onChange={(e)=> setKeyword(e.target.value)}/>
                     </div>
                     <div>
-                        <button onClick={(e)=>props.postSearchApi(startDate, keyword)}>검색</button>
+                        {/*<button onClick={(e)=>props.postSearchApi(startDate, keyword)}>검색</button>*/}
+                        <button onClick={(e)=>props.postListApi(startDate, keyword)}>검색</button>
                     </div>
                 </div>
             </div>
